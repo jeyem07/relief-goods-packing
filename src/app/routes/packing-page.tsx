@@ -25,7 +25,7 @@ export default function PackingPage() {
             </Link>
             <div className="flex-1 min-w-0">
               <h1 className="text-xl sm:text-2xl font-bold">
-                Relief Goods Packing
+                Pack Buddy
               </h1>
               <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">
                 Tell us how much your vehicle can carry and what you have. We

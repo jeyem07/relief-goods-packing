@@ -1,4 +1,4 @@
-# Relief Goods Packing
+# Pack Buddy
 
 A web application that helps optimize relief goods packing for disaster response. This app uses the knapsack algorithm to determine the best combination of items to pack based on weight capacity and importance ratings.
 
