@@ -30,7 +30,7 @@ export function ItemForm({ onAdd }: Props) {
   }
 
   return (
-    <form onSubmit={submit} className="space-y-2">
+    <form onSubmit={submit} className="space-y-2" data-tour="item-form">
       <div className="grid gap-3 sm:grid-cols-[1fr_7rem_9rem_auto] sm:items-end">
         <div className="space-y-1.5">
           <Label htmlFor="name">Item</Label>

@@ -12,7 +12,8 @@ export function ItemTable({ items, onRemove }: Props) {
     return <p className="py-6 text-center text-sm text-muted-foreground">No items yet. Add one above or use the sample goods.</p>
   }
   return (
-    <Table>
+    <div data-tour="item-table">
+      <Table>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[40%]">Item</TableHead>
@@ -36,5 +37,6 @@ export function ItemTable({ items, onRemove }: Props) {
         ))}
       </TableBody>
     </Table>
+    </div>
   )
 }

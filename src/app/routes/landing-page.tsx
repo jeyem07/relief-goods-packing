@@ -1,7 +1,31 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Package, Zap, Target, ArrowRight } from 'lucide-react'
+import { useTour } from '@/features/tour/hooks/use-tour'
+import { usePacking } from '@/features/packing/hooks/use-packing'
+import { useSystemTheme } from '@/hooks/use-system-theme'
 
 export default function LandingPage() {
+  useSystemTheme()
+  const navigate = useNavigate()
+  const p = usePacking()
+  
+  const tour = useTour({
+    reset: () => {
+      p.loadSample()
+      p.setCapacityKg(50)
+      p.setMethod('best')
+    },
+    setMethod: p.setMethod,
+  })
+
+  const handleGetStarted = () => {
+    navigate('/app')
+    // Small delay to let the page render before starting tour
+    setTimeout(() => {
+      tour.start()
+    }, 100)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
       {/* Hero Section */}
@@ -19,13 +43,13 @@ export default function LandingPage() {
             Optimize your disaster relief supplies. Pack the most important items while staying within weight limits.
           </p>
           
-          <Link
-            to="/app"
+          <button
+            onClick={handleGetStarted}
             className="inline-flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform"
           >
             Get Started
             <ArrowRight className="w-5 h-5" />
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -227,13 +251,13 @@ export default function LandingPage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link
-              to="/app"
+            <button
+              onClick={handleGetStarted}
               className="inline-flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform"
             >
-              Start Packing Now
+              Get Started
               <ArrowRight className="w-5 h-5" />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

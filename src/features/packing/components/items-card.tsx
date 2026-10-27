@@ -59,7 +59,7 @@ export function ItemsCard(p: Props) {
 
         <div className="space-y-3">
           <div className="flex gap-2">
-            <Button variant="outline" size="sm" onClick={p.onLoadSample}>Use sample goods</Button>
+            <Button variant="outline" size="sm" onClick={p.onLoadSample} data-tour="sample-btn">Use sample goods</Button>
             <Button variant="outline" size="sm" onClick={p.onClear}>Clear list</Button>
           </div>
 
