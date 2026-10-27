@@ -36,6 +36,7 @@ export function PackResult({ method, onMethodChange, capacityKg, plans }: Props)
             <button
               key={m.id}
               onClick={() => onMethodChange(m.id)}
+              data-tour={`tab-${m.id}`}
               className={`rounded-md px-3 py-1 text-sm font-medium transition ${
                 method === m.id ? 'bg-background shadow-sm' : 'text-muted-foreground'
               }`}
@@ -45,7 +46,7 @@ export function PackResult({ method, onMethodChange, capacityKg, plans }: Props)
           ))}
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2" data-tour="progress">
           <div className="flex items-center justify-between text-sm">
             <span>{kgText(plan.kg)} of {kgText(capacityKg)}</span>
             <Badge variant="secondary">{percent}% full</Badge>
@@ -74,7 +75,7 @@ export function PackResult({ method, onMethodChange, capacityKg, plans }: Props)
           </div>
         </div>
 
-        <Alert>
+        <Alert data-tour="weight-check">
           <CheckCircle2 className="text-green-700 dark:text-green-400" />
           <AlertTitle className="text-green-700 dark:text-green-400">Weight check passed</AlertTitle>
           <AlertDescription>
@@ -82,7 +83,7 @@ export function PackResult({ method, onMethodChange, capacityKg, plans }: Props)
           </AlertDescription>
         </Alert>
 
-        <Alert>
+        <Alert data-tour="compare">
           <Info />
           <AlertTitle>Quick vs. Best</AlertTitle>
           <AlertDescription>

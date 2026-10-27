@@ -37,7 +37,7 @@ export default function PackingPage() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div className="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6">
+          <div data-tour="importance-card" className="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 Importance packed
@@ -53,7 +53,7 @@ export default function PackingPage() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6">
+          <div data-tour="ways-card" className="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 Ways to pack

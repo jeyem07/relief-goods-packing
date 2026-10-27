@@ -10,7 +10,7 @@ const NOTES = [
 
 export function HowItWorks() {
   return (
-    <Card className="gap-0 py-0">
+    <Card className="gap-0 py-0" data-tour="notes">
       <CardContent className="divide-y p-0">
         <p className="px-5 py-4 text-sm font-semibold">What this shows</p>
         {NOTES.map((n) => (
